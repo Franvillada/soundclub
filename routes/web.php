@@ -11,6 +11,13 @@
 |
 */
 
+/* Necesitamos usuarios
+   Los usuarios van a poder compartir su musica, publicar eventos, comentar publicaciones
+*/
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
