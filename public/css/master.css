@@ -1,0 +1,401 @@
+/*Paleta de colores:
+#E1E6B9
+#C4D7A4
+#ABC8A4
+#375D3B
+#FFFFFF
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #375D3B;
+}
+
+.header-container{
+    background-color: white;
+}
+
+.headernaming{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.headernaming h1{
+    font-size: 1.8em;
+    padding-top: 10px;
+}
+
+.headernaming a{
+    color: black;
+}
+.headernaming a:hover{
+    text-decoration: none;
+}
+.logo{
+    height: 80px;
+    width: 80px;
+    margin-right: 5%;
+}
+
+.headerbuttons{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5%;
+}
+
+.headerbuttons-banner{
+    display: none;
+}
+
+.buttonsignin{
+    background-color: #375D3B;
+    border: solid #375D3B;
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+}
+
+.buttonsignin:hover{
+    transform: scale(1.1);
+}
+
+.buttonsignup{
+    background-color: #C4D7A4;
+    border: solid #C4D7A4;
+    color: #375D3B;
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+}
+
+.buttonsignup:hover{
+    transform: scale(1.1);
+}
+
+main{
+    padding-top: 80px;
+    z-index: 10;
+}
+
+.banner-container{
+    background-image: url(../images/background.jpg);
+    background-attachment: fixed;
+    min-height: 570px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.info-general{
+    background-color: black;
+    opacity: 0.8;
+    height: 320px;
+    margin-top: 130px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info-general h2{
+    opacity: 1;
+    color: white;
+    text-align: center;
+}
+
+.info-general p{
+    opacity: 1;
+    color: white;
+    font-weight: lighter;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.buttonbanner a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    height: 40px;
+    padding-top: 8px;
+    display: block;
+}
+.buttonbanner{
+    background-color: #C4D7A4;
+    opacity: 1;
+    width: 200px;
+    height: 40px;
+    border: none;
+}
+
+.buttonbanner:hover{
+    transform: scale(1.1);
+}
+
+.registro{
+    margin-top: 80px;
+    background-color: white;
+    border-radius: 10px;
+    min-width: 300px;
+    margin-bottom: 80px;
+}
+
+.contenedor-formulario{
+    margin-top: 25px;
+}
+
+.label-formulario{
+    margin-left: 10%;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.contenedor-input{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    height: 35px;
+}
+
+.alertas{
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 0;
+    font-size: 0.9em;
+}
+
+.boton-registro{
+    display: block;
+    width: 50%;
+    height: 50px;
+    background-color: #375D3B;
+    color: white;
+    margin: 0 auto;
+    text-decoration: none;
+    border-style: none;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 5%;
+    margin-bottom: 30px;
+}
+
+.boton-registro:hover{
+    opacity: 0.7;
+}
+
+.faq-container{
+    height: 570px;
+}
+
+.titulo-faq{
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 40px;
+    margin-bottom: 55px;
+}
+
+.lista-faq{
+    margin-bottom: 25px;
+    margin-left: 10%;
+    list-style-type: disc;
+}
+
+.lista-faq li{
+   
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.lista-faq a{
+    text-decoration: none;
+}
+
+.lista-faq a p{
+    color: black;
+    font-size: 1.1em;
+}
+
+.lista-faq a:hover{
+    font-size: 1.05em;
+}
+
+.login{
+    width: 100%;
+    background-color: #E1E6B9;
+}
+
+.login-container{
+    border: 1px solid #375D3B;
+    background-color: white;
+    border-radius: 1%;
+    margin-top: 80px;
+}
+
+.contenedor-contraseña-login{
+    margin-bottom: 5px;
+}
+
+.login-container a p{
+    margin-left: 10%;
+    margin-bottom: 10px;
+}
+
+.login-container a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo-login{
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.titulo-login{
+    text-align: center;
+}
+
+.footer-container{
+    background-color: #E1E6B9;
+    min-height: 55px;
+    overflow: hidden;
+    width: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.logo-footer{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.footer-container h2{
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.footer-container p{
+    margin-top: 24px;
+}
+
+.footer-container a{
+    display: block;
+}
+
+.contenedor-formulario-adicional{
+    background-color: #E1E6B9;
+}
+
+.home-container{
+    background-color: #E1E6B9;
+}
+
+.buscaMusicos:hover{
+    background-color: #375D3B;
+}
+
+.eventos:hover{
+    background-color: #375D3B;
+}
+
+.compartiMusica:hover{
+    background-color: #375D3B;
+}
+
+.descubriMusica:hover{
+    background-color: #375D3B;
+}
+
+
+@media (max-width: 992px){
+    .contenedor-input{
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    .alertas{
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+    .label-formulario{
+        margin-left: 5%;
+    }
+    .info-general{
+        height: 420px;
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 768px){
+    .headerbuttons{
+        display: none;
+    }
+
+    .headernaming{
+        justify-content: center;
+    }
+
+    .logo{
+        margin-right: 2%;
+    }
+
+    .banner-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-general{
+        margin-top: 30px;
+        width: 90%;
+        height: 250px;
+    }
+    
+    .info-general h2{
+        display: none;
+    }
+
+    .registro{
+        width: 90%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .headerbuttons-banner{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 576px){
+    .login-container{
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+}
+
