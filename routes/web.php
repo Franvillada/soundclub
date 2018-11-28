@@ -15,10 +15,14 @@
    Los usuarios van a poder compartir su musica, publicar eventos, comentar publicaciones
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/perfil', 'UserController@index')->name('perfil');
+
+Route::get('/eventos', 'EventController@index')->name('eventos');
+
+Route::get('/musicos', 'BandController@index')->name('musicos');

@@ -18,24 +18,25 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <div class="row mb-5">
+            <div class="row">
             <div class="col-lg-12">
-                <label for="email" class="label-formulario">{{ __('E-Mail Address') }}</label>
-                <div>
-                    <input id="email" type="email" name="email" class="contenedor-input{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" required autofocus>
+                
+                <div class="form-group">
+                    <label for="email" class="label-formulario">{{ __('E-Mail Address') }}</label>
+                    <input id="email" type="email" name="email" class="form-control mb-0 contenedor-input{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" required autofocus>
 
                     @if ($errors->has('email'))
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback label-formulario" role="alert">
                             <strong>{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
                 </div>
                 <label for="password" class="label-formulario">{{ __('Password') }}</label>
-                <div>
-                    <input id="password" type="password" name="password" class="contenedor-input contenedor-contraseña-login{{ $errors->has('password') ? ' is-invalid' : '' }}" required>
+                <div class="form-group">
+                    <input id="password" type="password" name="password" class="form-control mb-0 contenedor-input contenedor-contraseña-login{{ $errors->has('password') ? ' is-invalid' : '' }}" required>
 
                     @if ($errors->has('password'))
-                    <span class="invalid-feedback" role="alert">
+                    <span class="invalid-feedback label-formulario" role="alert">
                         <strong>{{ $errors->first('password') }}</strong>
                     </span>
                     @endif
@@ -45,14 +46,14 @@
                 <label for="remember" >{{ __('Remember Me') }}</label>
                 <button type="submit" class="boton-registro mb-0">{{ __('Login') }}</button>
                 <div>
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                    <a class="btn btn-link contenedor-input" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                     </a>
                 </div>
             </div>
             </div>
         </form>
-        </div>
+    </div>
     </div>
 </div>
 @endsection

@@ -68,7 +68,7 @@ header{
 .buttonsignin{
     background-color: #375D3B;
     border: solid #375D3B;
-    color: white;
+    color: white !important;
     width: 100px;
     height: 50px;
     font-weight: bold;
@@ -81,7 +81,7 @@ header{
 .buttonsignup{
     background-color: #C4D7A4;
     border: solid #C4D7A4;
-    color: #375D3B;
+    color: #375D3B !important;
     width: 100px;
     height: 50px;
     font-weight: bold;
@@ -329,6 +329,26 @@ main{
     background-color: #375D3B;
 }
 
+.modulos{
+    background-color: #E1E6B9;
+    padding: 0;
+    height: 100px;
+    border-radius: 5%;
+}
+
+.modulos a{
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+    height: inherit;
+    padding: 30px;
+}
+
+.modulos a:hover{
+    text-decoration: none;
+    background-color: #375D3B;
+}
 
 @media (max-width: 992px){
     .contenedor-input{
