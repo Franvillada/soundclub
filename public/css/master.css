@@ -223,7 +223,7 @@ main{
 }
 
 .lista-faq li{
-   
+
     margin-bottom: 25px;
     margin-top: 25px;
 }
@@ -346,6 +346,7 @@ main{
 }
 
 .modulos a:hover{
+    color: white;
     text-decoration: none;
     background-color: #375D3B;
 }
@@ -393,7 +394,7 @@ main{
         width: 90%;
         height: 250px;
     }
-    
+
     .info-general h2{
         display: none;
     }
@@ -419,3 +420,21 @@ main{
     }
 }
 
+.edit-profile{
+    display: flex;
+    justify-content: center;
+}
+
+.edit-profile a{
+    color: white;
+    background-color: #375D3B;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    height: 30px;
+    text-decoration: none;
+}
+
+.edit-profile a:hover{
+    opacity: 0.7;
+}

@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->string('instrument')->nullable();
             $table->string('band_name')->nullable();
+            $table->string('photo_path')->nullable();
             $table->boolean('active')->default(true);
             $table->rememberToken();
             $table->timestamps();

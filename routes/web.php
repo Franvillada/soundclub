@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/perfil', 'UserController@index')->name('perfil');
+Route::get('/perfil/{id]/editar', 'UserController@edit')->name('perfil.edit');
 
 Route::get('/eventos', 'EventController@index')->name('eventos');
 
