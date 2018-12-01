@@ -35,7 +35,7 @@
                 <div class="row mb-2 py-1 justify-content-center" style="background-color:#E1E6B9; font-weight:bold">{{ $user->first_name }}</div>
                 <div class="row mb-2 py-1 justify-content-center" style="background-color:#E1E6B9; font-weight:bold">{{ $user->last_name }}</div>
                 <div class="row mb-2 py-1 justify-content-center" style="background-color:#E1E6B9; font-weight:bold">{{ $user->genre }}</div>
-                <div class="row mb-2 py-1 justify-content-center" style="background-color:#E1E6B9; font-weight:bold">{{ $user->age }}</div>
+                <div class="row mb-2 py-1 justify-content-center" style="background-color:#E1E6B9; font-weight:bold">{{ $user->birth_date }}</div>
                 <div class="row mb-2 py-1 justify-content-center" style="background-color:#E1E6B9; font-weight:bold">{{ $user->email }}</div>
                 <div class="row mb-2 py-1 justify-content-center" style="background-color:#E1E6B9; font-weight:bold">{{ $user->phone_number }}</div>
                 <div class="row mb-2 py-1 justify-content-center" style="background-color:#E1E6B9; font-weight:bold">{{ $user->country }}</div>

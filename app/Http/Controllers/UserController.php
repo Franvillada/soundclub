@@ -59,7 +59,8 @@ class UserController extends Controller
      */
     public function edit()
     {
-        return view('perfil.edit');
+        $user = Auth::user();
+        return view('perfil.edit')->with('user', $user);
     }
 
     /**
@@ -69,9 +70,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        dd($request);
+        return view('perfil.show')->with('user', Auth::user());
     }
 
     /**
