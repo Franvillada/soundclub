@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Band;
+use App\User;
 use Illuminate\Http\Request;
 
 class BandController extends Controller
@@ -13,8 +14,9 @@ class BandController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('musicians.index');
+    {   
+        $users = User::where('instrument','!=','null')->paginate(9);
+        return view('musicians.index')->with('users', $users);
     }
 
     /**

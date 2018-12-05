@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="phone_number" class="label-formulario">Teléfono</label>
-                <input id="phone_number" type="text" class="form-control mb-0 contenedor-input{{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number" value="{{ $user->phone_number }}" required autofocus>
+                <input id="phone_number" type="text" class="form-control mb-0 contenedor-input{{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number" value="{{ $user->phone_number }}" autofocus>
             </div>
         </div>
         <div class="col-lg-6">

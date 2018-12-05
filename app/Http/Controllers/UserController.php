@@ -46,9 +46,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name)
     {
-        //
+        $user = User::where('name','=',$name);
+        dd($user);
     }
 
     /**
@@ -77,7 +78,7 @@ class UserController extends Controller
             'last_name' => 'required',
             'genre' => 'required',
             'birth_date' => 'required',
-            'phone_number' => 'required|integer',
+            'phone_number' => 'numeric',
             'country' => 'required',
             'city' => 'required',
             'instrument' => 'required',
@@ -89,8 +90,8 @@ class UserController extends Controller
             'last_name.required' => 'El campo apellido es obligatorio',
             'genre.required' => 'El campo sexo es obligatorio',
             'birth_date.required' => 'El campo fecha de nacimiento es obligatorio',
-            'phone_number.required' => 'El campo número de teléfono es obligatorio',
-            'phone_number.integer' => 'El campo número de teléfono debe ser numérico',
+            //'phone_number.required' => 'El campo número de teléfono es obligatorio',
+            //'phone_number.integer' => 'El campo número de teléfono debe ser numérico',
             'country.required' => 'El campo país es obligatorio',
             'city.required' => 'El campo ciudad es obligatorio',
             'instrument.required' => 'El campo instrumento es obligatorio',
