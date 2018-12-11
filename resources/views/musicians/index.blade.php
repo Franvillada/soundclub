@@ -2,6 +2,19 @@
 
 @section('subcontent')
 
+
+<form class="ml-5" action="POST" action="">
+    @csrf
+    <div class="row mb-4">
+        <div class="col-lg-6">
+            <input type="text" placeholder="Buscar músico" class="form-control">
+        </div>
+        <div class="col-lg-6">
+            <input type="submit" value="Buscar" class="boton-buscar mt-1">
+        </div>
+    </div>
+</form>
+
 @foreach($users->chunk(3) as $chunk)
  <div class="row d-flex justify-content-center">
      @foreach($chunk as $user)
