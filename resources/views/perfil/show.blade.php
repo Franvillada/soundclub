@@ -15,11 +15,16 @@
         <div class="row" style="min-height:360px">
             <p>{{ $user->photo_path }}</p>
         </div>
-        <div class="row edit-profile">
-            <a class="d-flex justify-content-center align-items-center" href="{{ route('perfil.edit') }}">Editar Perfil</a>
+        <div class="row">
+            <div class="edit-profile col-lg-6">
+                <a class="d-flex justify-content-center align-items-center" href="{{ route('perfil.edit') }}">Editar Perfil</a>
+            </div>
+            <div class="edit-profile col-lg-6">
+                    <a class="d-flex justify-content-center align-items-center" href="{{ route('perfil.edit') }}">Editar Foto</a>
+            </div>
         </div>
     </div>
-    
+
     <div class="col-lg-8">
         <div class="row mt-1 mb-2">
             <div class="col-lg-6">
@@ -82,7 +87,7 @@
             <div class="col-lg-6 p-0" style="overflow: hidden; text-align:center; background-color:#E1E6B9; font-weight:bold; min-height: inherit;">
                 <p class="p-1 m-0">{{ $user->country }}</p>
             </div>
-        </div>    
+        </div>
         <div class="row mt-2 mb-2">
             <div class="col-lg-6">
                 <h5>Ciudad:<h5>
@@ -111,5 +116,5 @@
     </div>
 </div>
 </div>
-    
+
 @endsection
