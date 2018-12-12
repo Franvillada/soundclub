@@ -59,7 +59,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($name)
     {
         $user = Auth::user();
         return view('perfil.edit')->with('user', $user);
@@ -91,8 +91,8 @@ class UserController extends Controller
             'last_name.required' => 'El campo apellido es obligatorio',
             'genre.required' => 'El campo sexo es obligatorio',
             'birth_date.required' => 'El campo fecha de nacimiento es obligatorio',
-            //'phone_number.required' => 'El campo número de teléfono es obligatorio',
-            //'phone_number.integer' => 'El campo número de teléfono debe ser numérico',
+            'phone_number.required' => 'El campo número de teléfono es obligatorio',
+            'phone_number.integer' => 'El campo número de teléfono debe ser numérico',
             'country.required' => 'El campo país es obligatorio',
             'city.required' => 'El campo ciudad es obligatorio',
             'instrument.required' => 'El campo instrumento es obligatorio',
@@ -101,6 +101,7 @@ class UserController extends Controller
 
         $validator = $this->validate($request, $rules, $messages);
         $newUser = Auth::user();
+
 
         $newUser->first_name = $validator['first_name'];
         $newUser->last_name = $validator['last_name'];
@@ -114,7 +115,7 @@ class UserController extends Controller
 
         $newUser->save();
 
-        return view('perfil.show')->with('user', Auth::user());
+        return view('perfil.show')->with('user', $newUser);
     }
 
     /**

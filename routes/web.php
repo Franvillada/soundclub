@@ -23,8 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/perfil/{name}', 'UserController@show')->name('perfil.show');
 Route::get('/perfil', 'UserController@index')->name('perfil');
-Route::get('/perfil/editar', 'UserController@edit')->name('perfil.edit');
-Route::put('/perfil/editar', 'UserController@update')->name('perfil.update');
+Route::get('/perfil/{name}/editar', 'UserController@edit')->name('perfil.edit');
+Route::put('/perfil/{name}/editar', 'UserController@update')->name('perfil.update');
 
 Route::get('/eventos', 'EventController@index')->name('eventos');
 

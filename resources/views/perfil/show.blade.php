@@ -15,14 +15,23 @@
         <div class="row" style="min-height:360px">
             <p>{{ $user->photo_path }}</p>
         </div>
+
+        @if($user->name === Auth::user()->name)
         <div class="row">
             <div class="edit-profile col-lg-6">
-                <a class="d-flex justify-content-center align-items-center" href="{{ route('perfil.edit') }}">Editar Perfil</a>
+                <a class="d-flex justify-content-center align-items-center" href="/perfil/{{ Auth::user()->name }}/editar">Editar Perfil</a>
             </div>
             <div class="edit-profile col-lg-6">
-                    <a class="d-flex justify-content-center align-items-center" href="{{ route('perfil.edit') }}">Editar Foto</a>
+                    <a class="d-flex justify-content-center align-items-center" href="#">Editar Foto</a>
             </div>
         </div>
+        @else
+        <div class="row">
+                <div class="edit-profile col-lg-12">
+                    <a class="d-flex justify-content-center align-items-center" href="#">Enviar Mensaje</a>
+                </div>
+        </div>
+        @endif
     </div>
 
     <div class="col-lg-8">
