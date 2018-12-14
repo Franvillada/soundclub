@@ -116,18 +116,14 @@ class UserController extends Controller
         
         if($request->file('avatar') != null)
         {
-            $path = $request->file('avatar')->storeAs(
-                'avatars', $request->user()->id. ".". $request->file('avatar')->extension()
-            );
 
-            /*$file = $request->file("avatar");
+            $file = $request->file("avatar");
             // Armo un nombre único para este archivo
             $name = $newUser->id . "." . $file->extension();
-            $folder = "avatars";
+            $folder = "public/avatars";
             $path = $file->storePubliclyAs($folder, $name);
-            */
-
-            $newUser->photo_path = $path;
+            
+            $newUser->photo_path = 'storage/avatars/'.$name;
         }
         
         $newUser->save();
