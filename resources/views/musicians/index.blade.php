@@ -3,11 +3,11 @@
 @section('subcontent')
 
 
-<form class="ml-5" action="POST" action="">
+<form class="ml-5" method="POST">
     @csrf
     <div class="row mb-4">
         <div class="col-lg-6">
-            <input type="text" placeholder="Buscar músico" class="form-control">
+            <input type="text" placeholder="Buscar músico" class="form-control" name="search">
         </div>
         <div class="col-lg-6">
             <input type="submit" value="Buscar" class="boton-buscar mt-1">

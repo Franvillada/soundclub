@@ -12,17 +12,14 @@
 
     <div class="row">
     <div class="col-lg-4">
-        <div class="row" style="min-height:360px">
-            <p>{{ $user->photo_path }}</p>
+        <div class="row d-flex justify-content-center" style="min-height:360px">
+        <img class="d-flex align-self-center rounded-circle" src="{{asset('storage/app/avatars/1.jpeg')}}" alt="Imagen usuario">
         </div>
 
         @if($user->name === Auth::user()->name)
         <div class="row">
-            <div class="edit-profile col-lg-6">
+            <div class="edit-profile col-lg-6 offset-lg-3">
                 <a class="d-flex justify-content-center align-items-center" href="/perfil/{{ Auth::user()->name }}/editar">Editar Perfil</a>
-            </div>
-            <div class="edit-profile col-lg-6">
-                    <a class="d-flex justify-content-center align-items-center" href="#">Editar Foto</a>
             </div>
         </div>
         @else

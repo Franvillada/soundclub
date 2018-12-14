@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -112,7 +113,23 @@ class UserController extends Controller
         $newUser->city = $validator['city'];
         $newUser->instrument = $validator['instrument'];
         $newUser->band_name = $validator['band_name'];
+        
+        if($request->file('avatar') != null)
+        {
+            $path = $request->file('avatar')->storeAs(
+                'avatars', $request->user()->id. ".". $request->file('avatar')->extension()
+            );
 
+            /*$file = $request->file("avatar");
+            // Armo un nombre único para este archivo
+            $name = $newUser->id . "." . $file->extension();
+            $folder = "avatars";
+            $path = $file->storePubliclyAs($folder, $name);
+            */
+
+            $newUser->photo_path = $path;
+        }
+        
         $newUser->save();
 
         return view('perfil.show')->with('user', $newUser);

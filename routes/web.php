@@ -29,3 +29,5 @@ Route::put('/perfil/{name}/editar', 'UserController@update')->name('perfil.updat
 Route::get('/eventos', 'EventController@index')->name('eventos');
 
 Route::get('/musicos', 'BandController@index')->name('musicos');
+Route::post('/musicos', 'BandController@find');
+

@@ -20,6 +20,17 @@ class BandController extends Controller
     }
 
     /**
+     * Display a listing of the search.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function find(Request $request)
+    {
+        $users = User::where('name','like','%'. $request->input('search') .'%')->where('instrument','!=','null')->paginate(9);
+        return view('musicians.index')->with('users', $users);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

@@ -199,6 +199,7 @@ main{
     font-weight: bold;
     border-radius: 5%;
     margin-bottom: 30px;
+    transition: all .5s;
 }
 
 .boton-registro:hover{
@@ -340,6 +341,76 @@ main{
     height: 100px;
 }
 
+.edit-profile{
+    display: flex;
+    justify-content: center;
+}
+
+.edit-profile a{
+    color: white;
+    background-color: #375D3B;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    height: 30px;
+    text-decoration: none;
+}
+
+.edit-profile input{
+    color: white;
+    background-color: #375D3B;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    height: 30px;
+    text-decoration: none;
+}
+
+.edit-profile a:hover{
+    opacity: 0.7;
+}
+
+.boton-buscar{
+    display: block;
+    width: 20%;
+    height: 30px;
+    background-color: #375D3B;
+    color: white;
+    text-decoration: none;
+    border-style: none;
+    font-weight: bold;
+    border-radius: 5%;
+}
+
+.boton-buscar:hover{
+    opacity: 0.7;
+}
+
+.avatar-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.avatar-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #375D3B;
+    display: inline-block;
+    transition: all .5s;
+    padding: 10px 25px !important;
+    width: fit-content;
+    text-align: center;
+    }
+
+.avatar-label:hover {
+    opacity: 0.7;
+}
+
 @media (max-width: 992px){
     .contenedor-input{
         width: 90%;
@@ -407,39 +478,4 @@ main{
         margin-left: 2.5%;
         margin-right: 2.5%;
     }
-}
-
-.edit-profile{
-    display: flex;
-    justify-content: center;
-}
-
-.edit-profile a{
-    color: white;
-    background-color: #375D3B;
-    font-weight: bold;
-    display: block;
-    width: 150px;
-    height: 30px;
-    text-decoration: none;
-}
-
-.edit-profile a:hover{
-    opacity: 0.7;
-}
-
-.boton-buscar{
-    display: block;
-    width: 20%;
-    height: 30px;
-    background-color: #375D3B;
-    color: white;
-    text-decoration: none;
-    border-style: none;
-    font-weight: bold;
-    border-radius: 5%;
-}
-
-.boton-buscar:hover{
-    opacity: 0.7;
 }

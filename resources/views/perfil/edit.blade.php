@@ -2,7 +2,7 @@
 
 @section('subcontent')
 
-<form method="POST" action="/perfil/{{ Auth::user()->name }}/editar">
+<form method="POST" action="/perfil/{{ Auth::user()->name }}/editar" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -95,6 +95,10 @@
                         <strong>{{ $errors->first('band_name') }}</strong>
                     </span>
                 @endif
+            <div class="form-group">
+                <label for="avatar" class="avatar-label label-formulario">Foto de Perfil</label>
+                <input id="avatar" type="file" class="avatar-input form-control mb-0 contenedor-input" name="avatar" autofocus>
+            </div>
         </div>
 
             <button type="submit" class="boton-registro mb-0">Actualizar Usuario</button>
