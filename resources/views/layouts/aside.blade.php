@@ -6,6 +6,11 @@
     <div class="col-lg-2">
         <div class="row mt-5 mb-3">
         <div class="col-lg-12 modulos text-center">
+            <a href="{{ route('home') }}">Home</a>
+        </div>
+        </div>
+        <div class="row mt-2 mb-3">
+        <div class="col-lg-12 modulos text-center">
             <a href="{{ route('musicos') }}">Musicos</a>
         </div>
         </div>

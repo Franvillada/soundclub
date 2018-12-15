@@ -2,7 +2,7 @@
 
 @section('subcontent')
 
-<form method="POST" action="/perfil/{{ Auth::user()->name }}/editar" enctype="multipart/form-data">
+<form method="POST" action="" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 

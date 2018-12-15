@@ -89,7 +89,7 @@
         <footer>
             <div class="row  footer-container mr-0 ml-0">
             <div class="d-flex col-12 justify-content-center col-lg-6 justify-content-lg-start">
-                <img class="ml-lg-5 logo-footer" src="images/logo.png" alt="logo">
+                <img class="ml-lg-5 logo-footer" src="{{asset('images/logo.png')}}" alt="logo">
                 <h2 class="ml-1 ml-lg-2">{{ config('app.name', 'Laravel') }}</h2>
                 <p class="ml-2 ml-lg-4">Copyright @ 2018</p>
             </div>

@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->date('date');
             $table->unsignedInteger('user_id');
             $table->boolean('active')->default(true);
+            $table->string('photo_path')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

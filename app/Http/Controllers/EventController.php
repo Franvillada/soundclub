@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -14,7 +15,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('events.index');
+        $events = Event::paginate(9);
+        return view('events.index')->with('events', $events);
     }
 
     /**
@@ -24,7 +26,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
     /**
@@ -35,7 +37,43 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules =[
+            'title' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'date' => 'required'
+        ];
+
+        $messages =[
+            'title.required' => 'El campo titulo es necesario',
+            'description.required' => 'El campo descripcion es necesario',
+            'location.required' => 'El campo ubicacion es necesario',
+            'date.required' => 'El campo dia es necesario'
+        ];
+
+        $validator = $this->validate($request, $rules, $messages);
+        $event = new Event;
+
+        $event->title = $validator['title'];
+        $event->description = $validator['description'];
+        $event->location = $validator['location'];
+        $event->date = $validator['date'];
+        $event->user_id = Auth::user()->id;
+
+        if($request->file('banner') != null)
+        {
+            $file = $request->file("banner");
+            // Armo un nombre único para este archivo
+            $name = $event->id . "." . $file->extension();
+            $folder = "public/banners";
+            $path = $file->storePubliclyAs($folder, $name);
+            
+            $event->photo_path = 'storage/banners/'.$name;
+        }
+        
+        $event->save();
+        
+        return redirect()->route('eventos');
     }
 
     /**

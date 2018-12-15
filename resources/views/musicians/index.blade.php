@@ -19,9 +19,15 @@
  <div class="row d-flex justify-content-center">
      @foreach($chunk as $user)
         <div class="col-lg-3 col-md-4 mx-2 my-2 py-2 card text-center">
-        <img class="card-img-top d-flex align-self-center rounded-circle" src="{{asset('storage/avatars/'. $user->id . '.' . 'jpeg')}}" alt="Imagen del Usuario">
+            
+            <img 
+            class="card-img-top d-flex align-self-center rounded-circle"
+            src={{ (isset($user->photo_path)) ? asset($user->photo_path) : asset('images/perfil.png') }}
+            alt="Imagen del Usuario"
+            >
+
             <div class="card-body pb-0">
-            <a href="/perfil/{{ $user->name }}"><h5 class="card-title">{{ $user->fullName()}}</h5></a>
+            <a href="/perfil/{{ $user->name }}"><h5 class="card-title">{{ $user->name}}</h5></a>
             <h6>Edad: {{ $user->getEdad()}}</h6>
             <h6>Instrumento(s): {{ $user->instrument }}</h6>
             <h6>Banda: {{ isset($user->band_name) ? $user->band_name : "--"}}</h6>

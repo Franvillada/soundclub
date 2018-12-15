@@ -49,8 +49,7 @@ class UserController extends Controller
      */
     public function show($name)
     {
-        $queryUser = User::where('name', '=', $name)->get();
-        $user = $queryUser[0];                                      //Esto debe hacerse dado que el query de SQL nos trae un $queryUser como una colección de resultados porque podría haber más de uno. En este caso, como hago la búsqueda a través del nombre de usuario que es único, entonces el subíndice 0 me trae el resultado correcto
+        $user = User::where('name','=',$name)->first();                                     //Esto debe hacerse dado que el query de SQL nos trae un $queryUser como una colección de resultados porque podría haber más de uno. En este caso, como hago la búsqueda a través del nombre de usuario que es único, entonces el subíndice 0 me trae el resultado correcto
         return view('perfil.show')->with('user', $user);
     }
 
@@ -127,8 +126,8 @@ class UserController extends Controller
         }
         
         $newUser->save();
-
-        return view('perfil.show')->with('user', $newUser);
+        
+        return redirect()->route('perfil');
     }
 
     /**

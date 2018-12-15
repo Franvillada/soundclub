@@ -13,7 +13,10 @@
     <div class="row">
     <div class="col-lg-4">
         <div class="row d-flex justify-content-center" style="min-height:360px">
-        <img class="d-flex align-self-center rounded-circle img-thumbnail avatar" src="{{Auth::user()->photo_path}}" alt="Imagen usuario">
+        <img 
+        class="d-flex align-self-center rounded-circle img-thumbnail avatar"
+        src="{{ (isset($user->photo_path)) ? asset($user->photo_path) : asset('images/perfil.png') }}"
+        alt="Imagen usuario">
         </div>
 
         @if($user->name === Auth::user()->name)
