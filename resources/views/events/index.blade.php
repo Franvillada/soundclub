@@ -3,8 +3,8 @@
 @section('subcontent')
 
 <div class="row">
-    <div class="col-lg-3">
-        <a href="{{ route('eventos.create')}}">Crear Evento</a>
+    <div class="col-lg-3 edit-profile">
+        <a class="d-flex justify-content-center align-items-center" href="{{ route('eventos.create')}}">Crear Evento</a>
     </div>
 </div>
 
@@ -19,19 +19,20 @@
  <div class="row d-flex justify-content-center">
      @foreach($chunk as $event)
         <div class="col-lg-3 col-md-4 mx-2 my-2 py-2 card text-center">
-            
-            
-            <img 
+
+
+            <img
             class="card-img-top d-flex align-self-center rounded-circle"
             src={{ (isset($event->photo_path)) ? asset($event->photo_path) : asset('images/perfil.png') }}
             alt="Imagen del Usuario"
             >
-            
+
 
             <div class="card-body pb-0">
-            <a href="#"><h5 class="card-title">{{ $event->title}}</h5></a>
+            <a href="/eventos/{{ $event->title }}"><h5 class="card-title">{{ $event->title}}</h5></a>
             <h6>Ubicacion: {{ $event->location}}</h6>
             <h6>Dia: {{ $event->date }}</h6>
+            <h6>Usuario: {{ $event->user->name }}</h6>
             </div>
         </div>
      @endforeach

@@ -1,11 +1,11 @@
 @extends('layouts.aside')
 
 @section('subcontent')
-    
+
 
 <div class="row">
 <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3">
-    
+
     <div class="row mb-4 mt-5">
         <div class="col-lg-12">
             <h1 class="titulo-login">Crea tu Evento</h1>
@@ -15,9 +15,9 @@
         @csrf
         <div class="row mb-5">
         <div class="col-lg-12">
-            
+
             <div class="form-group">
-                <label for="title" class="label-formulario">{{ __('Nombre del Evento') }}</label>
+                <label for="title" class="label-formulario">Nombre del Evento</label>
                 <input id="title" type="text" class="form-control mb-0 contenedor-input{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" required autofocus>
 
                 @if ($errors->has('title'))

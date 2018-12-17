@@ -22,13 +22,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/perfil/{name}', 'UserController@show')->name('perfil.show');
-Route::get('/perfil', 'UserController@index')->name('perfil');
 Route::get('/perfil/{name}/editar', 'UserController@edit')->name('perfil.edit');
 Route::put('/perfil/{name}/editar', 'UserController@update')->name('perfil.update');
+Route::get('/perfil', 'UserController@index')->name('perfil');
 
-Route::get('/eventos', 'EventController@index')->name('eventos');
+
 Route::get('/eventos/create','EventController@create')->name('eventos.create');
 Route::post('/eventos/create','EventController@store')->name('eventos.store');
+Route::get('/eventos/{name}', 'EventController@show')->name('eventos.show');
+Route::get('/eventos', 'EventController@index')->name('eventos');
+
 
 Route::get('/musicos', 'BandController@index')->name('musicos');
 Route::post('/musicos', 'BandController@find');

@@ -13,7 +13,7 @@
     <div class="row">
     <div class="col-lg-4">
         <div class="row d-flex justify-content-center" style="min-height:360px">
-        <img 
+        <img
         class="d-flex align-self-center rounded-circle img-thumbnail avatar"
         src="{{ (isset($user->photo_path)) ? asset($user->photo_path) : asset('images/perfil.png') }}"
         alt="Imagen usuario">
@@ -119,6 +119,18 @@
             </div>
             <div class="col-lg-6" style="overflow: hidden; text-align:center; background-color:#E1E6B9; font-weight:bold; min-height: 20px;">
                 <p class="p-1 m-0">{{ $user->band_name }}</p>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-lg-6">
+                <h5>Ultimo evento creado:<h5>
+            </div>
+            <div class="col-lg-6" style="overflow: hidden; text-align:center; background-color:#E1E6B9; font-weight:bold; min-height: 20px;">
+                <p class="p-1 m-0">
+                @if(isset($user->event->last()->title))
+                    {{ $user->event->last()->title }}
+                @endif
+                </p>
             </div>
         </div>
     </div>

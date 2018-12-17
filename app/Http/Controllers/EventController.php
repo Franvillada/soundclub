@@ -64,15 +64,15 @@ class EventController extends Controller
         {
             $file = $request->file("banner");
             // Armo un nombre único para este archivo
-            $name = $event->id . "." . $file->extension();
+            $name = $event->id . $event->title . "." . $file->extension();
             $folder = "public/banners";
             $path = $file->storePubliclyAs($folder, $name);
-            
+
             $event->photo_path = 'storage/banners/'.$name;
         }
-        
+
         $event->save();
-        
+
         return redirect()->route('eventos');
     }
 
@@ -82,9 +82,11 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($title)
     {
-        //
+        $event = Event::where('title','=',$title)->first();                                     //Esto debe hacerse dado que el query de SQL nos trae un $queryUser como una colección de resultados porque podría haber más de uno. En este caso, como hago la búsqueda a través del nombre de usuario que es único, entonces el subíndice 0 me trae el resultado correcto
+        return view('events.show')->with('event', $event);
+
     }
 
     /**

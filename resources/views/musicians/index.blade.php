@@ -19,8 +19,8 @@
  <div class="row d-flex justify-content-center">
      @foreach($chunk as $user)
         <div class="col-lg-3 col-md-4 mx-2 my-2 py-2 card text-center">
-            
-            <img 
+
+            <img
             class="card-img-top d-flex align-self-center rounded-circle"
             src={{ (isset($user->photo_path)) ? asset($user->photo_path) : asset('images/perfil.png') }}
             alt="Imagen del Usuario"

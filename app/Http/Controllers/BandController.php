@@ -14,7 +14,7 @@ class BandController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $users = User::where('instrument','!=','null')->paginate(9);
         return view('musicians.index')->with('users', $users);
     }
@@ -29,6 +29,7 @@ class BandController extends Controller
         $users = User::where('name','like','%'. $request->input('search') .'%')->where('instrument','!=','null')->paginate(9);
         return view('musicians.index')->with('users', $users);
     }
+
 
     /**
      * Show the form for creating a new resource.
