@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/perfil/{name}', 'UserController@show')->name('perfil.show');
+Route::post('/perfil/{name}', 'MessageController@store');
 Route::get('/perfil/{name}/editar', 'UserController@edit')->name('perfil.edit');
 Route::put('/perfil/{name}/editar', 'UserController@update')->name('perfil.update');
 Route::get('/perfil', 'UserController@index')->name('perfil');
@@ -36,3 +37,4 @@ Route::get('/eventos', 'EventController@index')->name('eventos');
 Route::get('/musicos', 'BandController@index')->name('musicos');
 Route::post('/musicos', 'BandController@find');
 
+Route::get('/mensajes', 'MessageController@index')->name('messages.index');

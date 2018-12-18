@@ -1,3 +1,42 @@
+<div class="bg-modal">
+    <div class="modal-content">
+        <form method="POST" action="">
+            @csrf
+            <input type="hidden" name="sender_id" value="{{ Auth::user()->id }}">
+            <input type="hidden" name="receiver_id" value="{{ $user->id }}">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <h4 class="text-center my-3">Escribe tu mensaje para {{ $user->name }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                            <input id="message-title" type="text" class="form-control contenedor-input" name="title" placeholder="Título del mensaje">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                            <textarea class="form-control contenedor-input" name="content" placeholder="Escriba el mensaje"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-center col-lg-6">
+                    <input class="boton-buscar" style="width: 40%;" type="submit" value="Enviar">
+                </div>
+                <div class="d-flex justify-content-center col-lg-6">
+                    <input class="boton-buscar" style="width: 40%;" type="button" id="boton-cerrar" value="Cancelar">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 @extends('layouts.aside')
 
 @section('subcontent')
@@ -28,7 +67,7 @@
         @else
         <div class="row">
                 <div class="edit-profile col-lg-12">
-                    <a class="d-flex justify-content-center align-items-center" href="#">Enviar Mensaje</a>
+                    <a class="d-flex justify-content-center align-items-center" id="botonmensaje">Enviar Mensaje</a>
                 </div>
         </div>
         @endif
@@ -139,3 +178,5 @@
 </div>
 
 @endsection
+
+<script src="{{ asset('js/master.js') }}" defer></script>

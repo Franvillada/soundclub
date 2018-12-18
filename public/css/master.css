@@ -344,6 +344,7 @@ main{
 .edit-profile{
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 .edit-profile a{
@@ -413,6 +414,32 @@ main{
 
 .avatar-label:hover {
     opacity: 0.7;
+}
+
+textarea{
+    resize: none;
+    min-height: 250px;
+}
+
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 6px;
+
 }
 
 @media (max-width: 992px){

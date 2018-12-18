@@ -21,7 +21,7 @@
         </div>
         <div class="row mt-2 mb-3">
         <div class="col-lg-12 modulos text-center">
-            <a href="{{ route('home') }}">Mensajes</a>
+            <a href="{{ route('messages.index') }}">Mensajes</a>
         </div>
         </div>
     </div>
