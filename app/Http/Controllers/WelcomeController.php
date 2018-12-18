@@ -15,14 +15,14 @@ class WelcomeController extends Controller
      {
         $this->middleware('guest');
      }
- 
+
      /**
       * Show the application dashboard.
       *
       * @return \Illuminate\Http\Response
       */
      public function index()
-     {  
-         return view('welcome');
+     {
+        return view('welcome');
      }
 }

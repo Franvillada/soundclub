@@ -64,7 +64,7 @@ class EventController extends Controller
         {
             $file = $request->file("banner");
             // Armo un nombre único para este archivo
-            $name = $event->id . $event->title . "." . $file->extension();
+            $name = str_replace(" ", "", $event->id . $event->title . "." . $file->extension());
             $folder = "public/banners";
             $path = $file->storePubliclyAs($folder, $name);
 

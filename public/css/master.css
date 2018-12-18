@@ -442,6 +442,27 @@ textarea{
 
 }
 
+.message-container{
+    padding: 5px;
+    border: solid 1px grey;
+    border-radius: 5px;
+}
+
+.message-title{
+    font-weight: bold;
+    background-color: #E1E6B9;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.message-content{
+    padding: 10px;
+    border: solid 0.5px lightgrey;
+    border-radius: 5px;
+    max-height: 65px;
+    overflow: auto;
+}
+
 @media (max-width: 992px){
     .contenedor-input{
         width: 90%;

@@ -26,10 +26,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="d-flex justify-content-center col-lg-6">
+                <div class="my-1 d-flex justify-content-center col-lg-6">
                     <input class="boton-buscar" style="width: 40%;" type="submit" value="Enviar">
                 </div>
-                <div class="d-flex justify-content-center col-lg-6">
+                <div class="my-1 d-flex justify-content-center col-lg-6">
                     <input class="boton-buscar" style="width: 40%;" type="button" id="boton-cerrar" value="Cancelar">
                 </div>
             </div>

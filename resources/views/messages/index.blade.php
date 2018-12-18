@@ -13,7 +13,21 @@
 @if($messages->count() > 0)
 
     @foreach ($messages as $message)
-        {{ $message->title }}
+        <div class="row my-2 message-container">
+            <div class="col-lg-12">
+                <div class="row my-1 message-title">
+                    <div class="col-lg-6 text-left">
+                        {{ $message->title }}
+                    </div>
+                    <div class="col-lg-6 text-right">
+                        {{ $message->created_at }}
+                    </div>
+                </div>
+                <div class="row my-1 message-content">
+                    {{ $message->content }}
+                </div>
+            </div>
+        </div>
     @endforeach
 
 @else
