@@ -22,14 +22,54 @@
     <link href="{{ asset('css/master.css') }}" rel="stylesheet">
 </head>
 <body>
+    @if(isset($user))
+    <div class="bg-modal">
+    <div class="modal-content">
+        <form method="POST" action="">
+            @csrf
+            <input type="hidden" name="sender_id" value="{{ Auth::user()->id }}">
+            <input type="hidden" name="receiver_id" value="{{ $user->id }}">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <h4 class="text-center my-3">Escribe tu mensaje para {{ $user->name }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                            <input id="message-title" type="text" class="form-control contenedor-input" name="title" placeholder="Título del mensaje">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                            <textarea class="form-control contenedor-input" name="content" placeholder="Escriba el mensaje"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="my-1 d-flex justify-content-center col-lg-6">
+                    <input class="boton-buscar" style="width: 40%;" type="submit" value="Enviar">
+                </div>
+                <div class="my-1 d-flex justify-content-center col-lg-6">
+                    <input class="boton-buscar" style="width: 40%;" type="button" id="boton-cerrar" value="Cancelar">
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    @endif
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel p-0">
             <div class="row container header-container">
             <div class="headernaming col-sm-12 col-md-5 offset-md-1 col-lg-5 offset-lg-1">
-                <a href="{{ route('welcome')}}">
+                <a href="{{ auth()->user() ? route('perfil') : route('welcome')}}">
                 <img class= "logo" src="{{ asset('images/logo.jpg') }}" alt="logo">
                 </a>
-                <a href="{{ route('welcome')}}">
+                <a href="{{ auth()->user() ? route('perfil') : route('welcome')}}">
                 <h1 class="pl-4"><strong>Soundclub</strong></h1>
                 </a>
             </div>
